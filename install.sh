@@ -30,3 +30,5 @@ show_subtext() {
 show_logo expand
 
 source install/apps/vpn.sh
+
+source install/config/config.sh
