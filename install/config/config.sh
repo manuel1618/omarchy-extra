@@ -1,2 +1,2 @@
-cp -R $OMARCHY_INSTALL/config/* ~/.config/
+cp -R $OMARCHY_EXTRA_ROOT/config/* ~/.config/
 echo "Configs replaced."

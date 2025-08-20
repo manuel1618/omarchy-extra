@@ -3,7 +3,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-OMARCHY_INSTALL=~/.local/share/omarchy-extra/install
+OMARCHY_EXTRA_ROOT=~/.local/share/omarchy-extra
 
 # Give people a chance to retry running the installation
 catch_errors() {
@@ -26,8 +26,8 @@ show_subtext() {
 
 show_logo expand
 
-source $OMARCHY_INSTALL/apps/dev.sh
-source $OMARCHY_INSTALL/apps/socials.sh
-source $OMARCHY_INSTALL/apps/vpn.sh
+source $OMARCHY_EXTRA_ROOT/install/apps/dev.sh
+source $OMARCHY_EXTRA_ROOT/install/apps/socials.sh
+source $OMARCHY_EXTRA_ROOT/install/apps/vpn.sh
 
-source $OMARCHY_INSTALL/config/config.sh
+source $OMARCHY_EXTRA_ROOT/install/config/config.sh
