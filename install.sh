@@ -26,5 +26,8 @@ show_subtext() {
 
 show_logo expand
 
+source $OMARCHY_INSTALL/apps/dev.sh
+source $OMARCHY_INSTALL/apps/socials.sh
 source $OMARCHY_INSTALL/apps/vpn.sh
+
 source $OMARCHY_INSTALL/config/config.sh
