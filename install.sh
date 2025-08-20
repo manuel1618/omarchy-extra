@@ -3,14 +3,11 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-export PATH="$HOME/.local/share/omarchy/bin:$PATH"
-OMARCHY_INSTALL=~/.local/share/omarchy/install
+OMARCHY_INSTALL=~/.local/share/omarchy-extra/install
 
 # Give people a chance to retry running the installation
 catch_errors() {
-  echo -e "\n\e[31mOmarchy installation failed!\e[0m"
-  echo "You can retry by running: bash ~/.local/share/omarchy/install.sh"
-  echo "Get help from the community: https://discord.gg/tXFUdasqhY"
+  echo -e "\n\e[31mOmarchy Extra installation failed!\e[0m"
 }
 
 trap catch_errors ERR
@@ -29,6 +26,5 @@ show_subtext() {
 
 show_logo expand
 
-source install/apps/vpn.sh
-
-source install/config/config.sh
+source $OMARCHY_INSTALL/apps/vpn.sh
+source $OMARCHY_INSTALL/config/config.sh
