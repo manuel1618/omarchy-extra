@@ -1,0 +1,45 @@
+#!/bin/bash
+# ~/.local/share/omarchy/bin/launch-apps
+# Workspace launcher using hyprctl dispatch exec
+
+terminal="uwsm app -- $TERMINAL"
+browser="omarchy-launch-browser"
+
+launch_ws() {
+    local ws=$1      # workspace number is the first argument
+    shift            # remove workspace number from arguments
+    hyprctl dispatch workspace "$ws" >/dev/null
+    sleep 0.2        # delay to avoid racing
+    for cmd in "$@"; do
+        hyprctl dispatch exec "$cmd" >/dev/null
+    done
+    sleep 0.8
+}
+
+# Workspace 1
+#launch_ws 1 "$terminal --working-directory $(omarchy-cmd-terminal-cwd)" cursor
+launch_ws 1 "cursor"
+
+# Workspace 2
+launch_ws 2 "omarchy-launch-webapp 'https://chatgpt.com'" "omarchy-launch-webapp 'https://grok.com'"
+
+# Workspace 3
+launch_ws 3 "$browser"
+
+# Workspace 4
+launch_ws 4 "omarchy-launch-webapp 'https://launchpad.37signals.com'"
+
+# Workspace 5
+launch_ws 5 "uwsm-app -- nautilus --new-window"
+
+# Workspace 6
+launch_ws 6 "omarchy-launch-or-focus spotify"
+
+# Workspace 7
+launch_ws 7 "omarchy-launch-webapp 'https://teams.microsoft.com/v2/'" "omarchy-launch-webapp 'https://outlook.office.com/'"
+
+# Workspace 9
+launch_ws 9 "uwsm app -- omarchy-windows-vm launch"
+
+# Optional: return to original workspace (here workspace 1)
+hyprctl dispatch workspace 1 >/dev/null

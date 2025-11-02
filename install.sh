@@ -31,3 +31,5 @@ source $OMARCHY_EXTRA_ROOT/install/apps/socials.sh
 source $OMARCHY_EXTRA_ROOT/install/apps/vpn.sh
 
 source $OMARCHY_EXTRA_ROOT/install/config/config.sh
+
+source $OMARCHY_EXTRA_ROOT/install/bin/bin.sh
