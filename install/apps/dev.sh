@@ -3,6 +3,7 @@
 # List of packages to install
 packages=(
   github-cli
+  go-task
 )
 
 echo "Installing dev packages: ${packages[*]}"
